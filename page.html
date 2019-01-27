@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Yuanqi Yang-Lab #2</title>
+    <script src="setting.js"></script>
+    <link rel="stylesheet" href="page1.css">
+
+    <body onload="setTheme()">
+      <div class="lighttheme"></div>
+      <h1>Yuanqi Yang-CSE 686 Internet Programming</h1>
+      <p1 id="lab1"></p1>
+      <form>
+        <input type="checkbox" id="check1" >dark theme &emsp;
+        <input type="checkbox" id="check2">light theme &emsp;
+        <input type="checkbox" id="check3">page theme
+      </form>
+      <button onclick="toggleTheme()">select!</button>
+      <script>
+        var d= new Date();
+        document.getElementById("lab1").innerHTML=d;
+      </script>
+      <div style="margin:10px 25px">
+        <p>
+          <li>
+            <a href="lab1.html">Lab #1 page</a>
+          </li>
+          <li>
+            <a href="sitemap.html">Site map</a>
+          </li>
+        </p>
+      </div>
+
+    </body>
+  </head>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Yuanqi Yang-Lab #2</title>
+    <Link rel="stylesheet" href="page1.css">
+  <body>
+    <h1>Yuanqi Yang-CSE 686 Internet Programming</h1>
+    <p1 id="lab1"></p1>
+    <script>
+      var d= new Date();
+      document.getElementById("lab1").innerHTML=d;
+    </script>
+  </body>
+  </head>
+</html>
+-->
+
+
+

@@ -1,0 +1,23 @@
+body{
+    font-family: Tahoma;
+    margin: 3% 5%;
+}
+
+.lighttheme{
+    background-color:cornsilk;
+    color:maroon;
+}
+
+.darktheme{
+    background-color: #333333;
+    color: cornsilk;
+}
+
+a.linkdarktheme {
+    color:cornsilk;
+  }
+  
+a.linklighttheme {
+color:maroon;
+}
+
