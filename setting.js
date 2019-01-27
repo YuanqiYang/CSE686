@@ -1,9 +1,3 @@
-/*
-  Lab2Helper.js - Helper functions for theming static pages
-
-  Jim Fawcett, CSE686 - Internet Programming, Spring 2018
-*/
-/*---- set class attribute on body ----------------------*/
 
 function setBodyTheme(theme) {
     // var test = document.getElementsByClassName(theme)[0];
