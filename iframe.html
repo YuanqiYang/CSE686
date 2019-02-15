@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+   - Lab1.htm - Lab #4
+   - ver 1.0 - 15 Dec 2018
+   - Jim Fawcett, Syracuse University
+  -->
+  <title>Lab #4</title>
+  <style>
+      body {font-family: Verdana, sans-serif; margin:3% 5%;background-color: 			#FFAD86}
+      sizer-button {
+      background-color: #eeeeee;
+      color: #333333;
+      width: 1.8em;
+      height: 0.75em;
+      line-height: 0.55em; /*vertically align text*/
+      text-align: center;
+      vertical-align: middle;
+      margin-left: 0px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      border: 1px solid black;
+      font-family: 'Comic Sans MS';
+      font-size: 1.5em;
+      font-weight: bold;
+      box-shadow: 2px 2px 2px 1px #cccccc;
+    }
+
+    /* what happens when mouse hovers over sizer-button */
+    sizer-button:hover {
+      background-color:#dddddd;
+      box-shadow: -2px -2px 2px 1px #cccccc;
+      cursor: pointer;
+      -webkit-user-select: none; /* Chrome all / Safari all */
+      -moz-user-select: none; /* Firefox all */
+      -ms-user-select: none; /* IE 10+ */
+      user-select: none; /* Likely future */
+    }
+
+    /* Flexbox to hold sizer buttons and title */
+    sizerbutton-container {
+      display: flex;
+    }
+
+    .iframe1 input[type=text] {
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 18px;
+    border: none;
+    }
+    spacer-25 {
+    display: block;
+    height: 25px;
+    }
+    .App{
+      text-align: center;
+    }
+  </style>
+<script>
+        /*---- make picture bigger ----*/
+    
+   /*   function biggerImage(id)
+        {
+          let pict = document.getElementById(id);
+          pict.width = 1.2 * pict.width+100;
+          pict.height= 1.2*pict.height+50;
+        }
+        /*---- make picture smaller ----*/
+    
+   /*     function smallerImage(id) {
+          let pict = document.getElementById(id);
+          pict.width = pict.width / 1.2;
+        }
+        /*---- add resizing buttons and image to placeholder ----*/
+   
+   /*     function hideImage(id) {
+          let pict = document.getElementById(id);
+          pict.width = 0;
+          pict.height=0;
+        }
+
+        function gotopage(){
+            let iframe=document.getElementById("theiframe");
+            let url=document.getElementsByTagName("input")[0];
+            iframe.src=url.value;
+          }*/
+      </script>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link rel="stylesheet" href="sett.css" />
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+<body>
+  <header>
+    <hgroup id="pagetitle">
+      <h1 id="title" text-align="Left">Lab #5 - JavaScript Libraries lab</h1>
+      <!--<h3 id="subtitle" align="center">Discuss Projects, Labs, Class Mechanics</h3>-->
+    </hgroup>
+  </header>
+  <banded-block class="fixedwidth">
+      This lab focuses on the React library. We will build a React component that resizes images.
+  </banded-block>
+  <h2>Activities:</h2>
+  <div id="root">
+  </div>
+    <div class="imagine" style="text-align: center">
+        <img id="theiframe" src="44.jpg" width="80%" height="80%">
+    </div>
+
+
+
+<!--<div class="iframe1" style="text-align:center">
+<fixedwidth-block>
+      <sizerbutton-container>
+          <sizer-button onclick="biggerImage('theiframe')">+</sizer-button>
+          <sizer-button onclick="smallerImage('theiframe')">-</sizer-button>
+          <sizer-button onclick="hideImage('theiframe')">Hide</sizer-button>
+        </sizerbutton-container>-->
+  <!--   <input type="text" placeholder="Search.." value="https://ecs.syr.edu/faculty/fawcett/handouts/cse686/Lectures/Lab4.htm">
+        <button onclick="gotopage()">Search</button>
+        <spacer-15></spacer-15>
+        <iframe id="theiframe" src="https://ecs.syr.edu/faculty/fawcett/handouts/cse686/Lectures/Lab4.htm" width="900" height="600"></iframe>-->  
+ <!-- </fixedwidth-block>
+  <spacer-25></spacer-25>
+</div>-->
+
+
+<script type="text/babel">
+    
+  /* JSX code below, e.g., a mix of JavaScript and markup */
+
+  class App extends React.Component {
+    constructor(props) {
+    super(props);
+    this.biggerImage = this.biggerImage.bind(this);
+  }
+    biggerImage=(id)=>{
+      let pict = document.getElementById(id);
+          pict.width = 1.2 * pict.width+100;
+          pict.height= 1.2*pict.height+50;
+    }
+    smallerImage=(id)=>{
+      let pict = document.getElementById(id);
+          pict.width = pict.width / 1.2;
+    }
+    hideImage=(id)=>{
+      let pict = document.getElementById(id);
+          pict.width = 0;
+          pict.height=0;
+    }
+
+    render() {
+      return (
+        <div className="App">
+          <sizerbutton-container>
+          <sizer-button onClick={(id)=>this.biggerImage('theiframe')}>+</sizer-button>
+          <sizer-button onClick={(id)=>this.smallerImage('theiframe')}>-</sizer-button>
+          <sizer-button onClick={(id)=>this.hideImage('theiframe')}>Hide</sizer-button>&emsp;
+          <b>Figure 1. - How to use React</b>
+        </sizerbutton-container>
+        </div>
+      );
+    }
+  }
+  /*var widget = React.createElement(
+  <App />);*/
+  ReactDOM.render(
+  <App />, document.getElementById('root')
+  );
+</script>
+</body>
+</html>
